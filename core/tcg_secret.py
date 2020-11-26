@@ -37,7 +37,7 @@ class tcg_secret:
     def get_secret(self, secret_name):
         """
         This function reads a secure parameter from AWS' Secrets Manager.
-        Permissions inherited AWS confgiure / role
+        Permissions inherited AWS configure / role
         Input: secret name as stored in AWS secrets manager.
         Output: object with secrets string and metadata
         """
@@ -48,6 +48,25 @@ class tcg_secret:
         return credentials
 
     def create_secret(self, secret_name, description, secret_string, key_alias):
+        """
+        Creates a secret in AWS' secrets manager
+
+        Parameters
+        ----------
+        secret_name: str
+            Name of secret
+        description: str
+            Secret description
+        secret_string: str
+            Contents of the secret. Usually a stringified json
+        key_alias: str
+            KMS name to map to secret
+
+        Returns
+        -------
+        response: dict
+            Dict object returned by boto3 secrets manager
+        """
         kms_client = self.session.client('kms')
         key_json = kms_client.describe_key(KeyId=key_alias)
         key_id = key_json['KeyMetadata']['Arn']
