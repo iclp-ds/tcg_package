@@ -42,6 +42,7 @@ def test_create_exists(secret):
                              secret_string,
                              key_alias)
 
+
 def test_get_exists(secret):
     response = secret.get_secret(secret_name)
     assert type(response) is dict
@@ -63,6 +64,7 @@ def test_delete_not_exists(secret):
     with pytest.raises(secret.client.exceptions.ResourceNotFoundException):
         not_exists_name = 'does_not_exist_' + generate_unique_id(10)
         secret.delete_secret(not_exists_name)
+
 
 """
 update
