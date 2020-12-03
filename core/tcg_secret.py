@@ -113,4 +113,4 @@ class tcg_secret:
         response = self.client.describe_secret(
             SecretId=secret_name
         )
-        return response['ARN']
+        return response
