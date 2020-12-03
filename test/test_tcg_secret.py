@@ -54,6 +54,17 @@ def test_get_not_exists(secret):
         secret.get_secret(not_exists_name)
 
 
+def test_getarn_exists(secret):
+    response = secret.get_arn(secret_name)
+    assert type(response) is str
+
+
+def test_getarn_not_exists(secret):
+    with pytest.raises(secret.client.exceptions.ResourceNotFoundException):
+        not_exists_name = 'does_not_exist_' + generate_unique_id(10)
+        secret.get_arn(not_exists_name)
+
+
 def test_delete(secret):
     response = secret.delete_secret(secret_name)
     assert list(response.keys()) == ['ARN', 'Name', 'DeletionDate', 'ResponseMetadata']
