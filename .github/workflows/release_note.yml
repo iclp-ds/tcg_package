@@ -23,7 +23,7 @@ jobs:
       uses: docker://decathlon/wiki-page-creator-action:latest
       env:
         ACTION_MAIL: jacob.punter@collinsongroup.com
-        ACTION_NAME: Jacob Punter
+        ACTION_NAME: JPunterCG
         GH_PAT: ${{ secrets.GH_PAT }}
         MD_FOLDER: temp_release_notes
         OWNER: iclp-ds
