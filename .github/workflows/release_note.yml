@@ -28,4 +28,4 @@ jobs:
         MD_FOLDER: temp_release_notes
         OWNER: Collinson
         REPO_NAME: tcg_package
-        SKIP_MD: README.md:  
+        SKIP_MD: README.md
