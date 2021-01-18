@@ -26,6 +26,6 @@ jobs:
         ACTION_NAME: Jacob Punter
         GH_PAT: ${{ secrets.GH_PAT }}
         MD_FOLDER: temp_release_notes
-        OWNER: Collinson
+        OWNER: iclp-ds
         REPO_NAME: tcg_package
         SKIP_MD: README.md
