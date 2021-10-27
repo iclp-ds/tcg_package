@@ -13,7 +13,8 @@ except ImportError: # for pip <= 9.0.3
     install_reqs = parse_requirements("requirements.txt")
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
 
-reqs = [str(ir.req) for ir in install_reqs]
+with open("requirements.txt", "r") as f:
+    install_requires = f.read().splitlines()
 
 setup(
     name='tcgsecrets',
@@ -23,6 +24,7 @@ setup(
     author_email='puneet.jain@collinsongroup.com',
     license='http://www.apache.org/licenses/LICENSE-2.0',
     # package_dir = 'core',
+    install_requires=install_requires,
     packages = find_packages(exclude=['test']),
     long_description=open('README.md').read(),
     classifiers =[
