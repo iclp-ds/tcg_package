@@ -29,6 +29,7 @@ class tcg_secret:
             region_name=self.region_name,
             endpoint_url=self.endpoint_url
         )
+        print("This is the v1.0.1 version of the TCG Secret Package")
 
     def __del__(self):
         # terminate the class

@@ -17,7 +17,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name='tcgsecrets',
-    version='1.0.0',   # needs to be updated before every version /tag release
+    version='1.0.1',   # needs to be updated before every version /tag release
     description='Internal Collinson ',
     author='Puneet Jain',
     author_email='puneet.jain@collinsongroup.com',
