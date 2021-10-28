@@ -18,7 +18,7 @@ with open("requirements.txt", "r") as f:
 
 setup(
     name='tcgsecrets',
-    version='1.0.1',   # needs to be updated before every version /tag release
+    version='1.0.4',   # needs to be updated before every version /tag release
     description='Internal Collinson ',
     author='Puneet Jain',
     author_email='puneet.jain@collinsongroup.com',
